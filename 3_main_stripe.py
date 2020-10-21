@@ -16,6 +16,14 @@ pygame.display.set_caption("Test Games")
 # background image loading
 background = pygame.image.load("./background_moon.jpg")
 
+# character loading (stripe)
+character = pygame.image.load("./stripe.png")
+character_size = character.get_rect().size      # get character's size (pixel size)
+character_width = character_size[0]
+character_height = character_size[1]
+character_x_pos = screen_width / 2 - character_width / 2
+character_y_pos = screen_height - character_height
+
 # Event Loop
 running = True
 while running:
@@ -25,6 +33,7 @@ while running:
 
     # Background blit
     screen.blit(background, (0, 0))
+    screen.blit(character, (character_x_pos, character_y_pos))
 
     # screen update (MUST)
     pygame.display.update()

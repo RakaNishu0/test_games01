@@ -37,14 +37,14 @@ while running:
 
         # Keyboard event
         if event.type == pygame.KEYDOWN:            # WHEN USER press KEYS,
-            if event.key == pygame.K_LEFT:          # move character to left
-                to_x -= 1                           # calculate x to left by 2
-            elif event.key == pygame.K_RIGHT:       # move character to right
-                to_x += 1
-            elif event.key == pygame.K_UP:          # move character to up
-                to_y -= 1
-            elif event.key == pygame.K_DOWN:        # move character to down
-                to_y += 1
+            if event.key == pygame.K_LEFT:              # move character to left
+                to_x -= 2                                   # calculate x to left by 2
+            elif event.key == pygame.K_RIGHT:           # move character to right
+                to_x += 2
+            elif event.key == pygame.K_UP:              # move character to up
+                to_y -= 2
+            elif event.key == pygame.K_DOWN:            # move character to down
+                to_y += 2
 
         if event.type == pygame.KEYUP:              # WHEN USER release KEYS,
             if event.key == pygame.K_LEFT or pygame.K_RIGHT:

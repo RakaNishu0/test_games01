@@ -149,9 +149,14 @@ while running:
             ball_val["to_x"] = ball_val["to_x"] * -1    # 벽에 부딪히면 방향 전환
     # Vertical Movement
         if ball_pos_y >= screen_height - stage_height - ball_height:
-            ball_val["to_y"] = ball_val["init_speed_y"]     # stage 에 닿으면 튕기는 속도
+            ball_val["to_y"] = ball_val["init_speed_y"]
+            # stage 에 닿으면 튕기는 속도
+            # Speed 라고 하지만, 초기에 설정한 속도값을 이용해 y 좌표를 크게 빼버리는 것 = 확 끌어올리는 효과
+            # 결국 다 좌표 놀음이구나...
         else:
             ball_val["to_y"] += 0.7
+            # 바닥에 닿지 않았을 때에는 일정하게 좌표값을 수정한다.
+
     # Ball's Moving Coordinate
         ball_val["pos_x"] += ball_val["to_x"]
         ball_val["pos_y"] += ball_val["to_y"]
